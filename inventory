@@ -1,1 +1,5 @@
-192.168.0.101
+[nodes]
+192.168.0.101 
+
+[nodes:vars]
+ansible_user=rathik 
