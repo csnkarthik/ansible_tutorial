@@ -1,0 +1,13 @@
+---
+- hosts: all
+  become: true
+  become_user: rathik
+  become_method: sudo
+  tasks:
+  - name: update package index
+    apt:
+    update_cache: true
+  - name: install apache2 packagg
+    apt:
+      name: apache2
+
