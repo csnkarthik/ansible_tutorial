@@ -1,0 +1,9 @@
+[local]
+127.0.0.1
+localhost
+
+[local:vars]
+ansible_user=root
+
+
+

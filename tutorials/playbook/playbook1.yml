@@ -1,0 +1,9 @@
+---
+- name: "my first playbook"
+  hosts: all
+  connection: local
+  
+  tasks:    
+    - name: Ping
+      ping:
+    
