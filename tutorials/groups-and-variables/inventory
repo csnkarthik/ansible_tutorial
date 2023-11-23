@@ -1,0 +1,16 @@
+[ansible_slaves]
+192.168.0.101
+
+[ansible_slaves:vars]
+ansible_user=rathik
+ansible_ssh_private_key_file=/home/karthikn/.ssh/ansible
+
+[jenkins]
+192.168.0.102 ansible_user=karthik
+
+[jenkins:vars]
+ansible_ssh_private_key_file=/home/karthikn/.ssh/ansible
+
+[combined:children]
+slaves
+combined
