@@ -1,0 +1,24 @@
+---
+  - name: find files playbook
+    hosts: localhost
+    connection: local
+
+    tasks:
+      - name: ping first
+        ping:
+      
+      - name: find files
+        find: 
+          paths: ~/f1
+          patterns: '*.txt'   
+          file_type: file
+        register: found_files
+
+      - name: print list of files
+        debug:
+          var: found_files.matched
+      
+      - name: iterate through the found files and print
+        debug:
+          msg: 'path: {{ item.path }}'
+        loop: '{{ found_files.files }}'
