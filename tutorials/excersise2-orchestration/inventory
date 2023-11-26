@@ -1,0 +1,9 @@
+[logicalhosts]
+server1 ansible_host=127.0.0.1
+server2 ansible_host=127.0.0.1
+server3 ansible_host=127.0.0.1
+server4 ansible_host=127.0.0.1
+
+[logicalhosts:vars]
+ansible_connection=local
+

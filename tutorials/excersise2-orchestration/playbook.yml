@@ -1,0 +1,22 @@
+---
+  - name: orchestration example
+    hosts: logicalhosts
+    serial: 1
+
+    tasks:
+
+      - name: print message
+        debug:
+          msg: "testing"
+
+      - name: "shut down"
+        debug:
+          msg: "shutting down {{inventory_hostname}}"
+
+      - name: "update"
+        debug:
+          msg: "updating {{inventory_hostname}}"
+
+      - name: "restart"
+        debug:
+          msg: "restarting {{inventory_hostname}}"
