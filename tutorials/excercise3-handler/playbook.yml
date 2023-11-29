@@ -1,0 +1,38 @@
+---
+  - name: handler example
+    hosts: localservers
+    serial: 1
+
+    vars:
+      var1: 1
+      var2: 2
+      varList:
+        - 1
+        - 2
+        - 3
+
+    tasks:
+
+      - name: install nginx
+        debug:
+          msg: "install nginx on {{inventory_hostname}}"
+
+      - name: "upgrade nginx"
+        debug:
+          msg: "upgrade nginx on {{inventory_hostname}}"
+
+      - name: "configure nginx"
+        debug:
+          msg: 
+           - "configure nginx {{inventory_hostname}}"
+        notify: Restart nginx
+        changed_when: true
+
+      - name: "restart nginx"
+        debug:
+          msg: "restart nginx on {{inventory_hostname}}"
+      
+    handlers:
+      - name: Restart nginx
+        debug:
+          msg: "Restarted {{inventory_hostname}}"
